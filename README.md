@@ -1,27 +1,25 @@
 # Typing
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+A [Stephen Grider challenge](https://www.udemy.com/course/the-modern-angular-bootcamp/). See section 4.
 
-## Development server
+I took a couple of different approaches than taught. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+A class property `testText` is set in the `ngOnInit` hook.
 
-## Code scaffolding
+The component class has a `isSame` flag.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+A class method `markAnswer` is bound to the input control on the `input` event.
 
-## Build
+On each `input` event `isSame` is set by comparison of `testText` and the current value of the control.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+As well the property `answerText` is assigned the current value of the input control in `markAnswer`.
 
-## Running unit tests
+In the template `isSame` is used to toggle the view of the output string aka `answerText` and the Success header.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Using a span with an `*ngFor` loop for the output string, letter by letter I use a style setting based on the index of the letter and the element at index `i` of `testText`;
 
-## Running end-to-end tests
+The instruction was to use the loop on the `testText` but I wanted to reuse the output block.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## TODO
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+A nice to have is to show the input box but have it disappear behind the output block so it appears that the typing is happening directtly in the output block. This will need some additional styling with position absolute.

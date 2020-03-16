@@ -13,9 +13,11 @@
         <input #typed class="input" type="text" (input)="markAnswer(typed.value)" placeholder="Your Entry">
 
       </div>
-      <div class="box has-text-centered">
+      <div class="box has-text-centered" [ngStyle] ="{'background-color':'black'}">
         <h2 class='title success' [style.display]="isSame ? 'block' : 'none'">Success</h2>
-        <div [style.display]="isSame ? 'none': 'block'">{{answerText}}</div>
+        <div [style.display]="isSame ? 'none': 'block'"><span
+          [style.color]="l === testText[i] ? 'green' : 'red'"
+          *ngFor="let l of answerText.split(''); let i = index;">{{l}}</span></div>
       </div>
     </div>
   </div>
