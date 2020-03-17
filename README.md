@@ -22,4 +22,11 @@ The instruction was to use the loop on the `testText` but I wanted to reuse the 
 
 ## TODO
 
-A nice to have is to show the input box but have it disappear behind the output block so it appears that the typing is happening directtly in the output block. This will need some additional styling with position absolute.
+[x] A nice to have is to show the input box but have it disappear behind the output block so it appears that the typing is happening directly in the output block. 
+
+- hid the input box  with z-index, absolute positioning and click in the container to place the focus for input
+- revised the design so the test string blocks the input control
+
+[x] ~~Fix the styling so the visual box parent grows too~~
+
+- moved the output below to overcome the need for overflow because absolute positioning block is out of the document flow.

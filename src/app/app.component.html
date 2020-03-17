@@ -1,24 +1,41 @@
-<div class="container">
+<div class="container" (click)="typed.focus()">
   <div class="columns is-centered">
-    <div class="box is-one-third column">
-      <h1 class="title has-text-centered">
-        {{title}}
-      </h1>
-      <p class="has-text-centered">
-        {{testText}}
-      </p>
+    <div  class="is-one-third column">
+    <div class="card  box ">
 
-      <div class="field ">
+      <div class="card-content">
+        <h1 class="title   has-text-centered">
+          {{title}}
+        </h1>
+        <div>
 
-        <input #typed class="input" type="text" (input)="markAnswer(typed.value)" placeholder="Your Entry">
+          <div id="pretense" class="field">
 
+            <div class="control">
+              <input #typed class="input" type="text" (input)="markAnswer(typed.value)" placeholder="Your Entry" [(ngModel)]="inputValue" typed='ngModel' >
+            </div>
+
+            <p id="testText" class=" has-text-centered">
+              {{testText}}
+            </p>
+          </div>
+
+        </div>
       </div>
-      <div class="box has-text-centered" [ngStyle] ="{'background-color':'black'}">
-        <h2 class='title success' [style.display]="isSame ? 'block' : 'none'">Success</h2>
-        <div [style.display]="isSame ? 'none': 'block'"><span
-          [style.color]="l === testText[i] ? 'green' : 'red'"
-          *ngFor="let l of answerText.split(''); let i = index;">{{l}}</span></div>
+      <span class="help">click above to start testing</span>
+    </div>
+    <div id="visual" class="box has-text-centered " [ngStyle]="{'background-color':'black'}">
+
+      <div class="success" [style.display]="isSame ? 'inline' : 'none'" (click)="resetTest()">
+        <h2>Success</h2>
+        <p class="help">Click to reset</p>
+      </div>
+
+      <div [style.display]="isSame ? 'none': 'inline'"><span [style.color]="l === testText[i] ? 'limegreen' : 'red'"
+        *ngFor="let l of answerText.split(''); let i = index;">{{l}}</span>
       </div>
     </div>
   </div>
+  </div>
 </div>
+

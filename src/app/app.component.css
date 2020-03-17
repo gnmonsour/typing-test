@@ -1,5 +1,31 @@
 .success {
-  display: none;
-  color: green;
+  font-size: larger;
+  color: limegreen;
   font-weight: 600;
+}
+
+#pretense {
+  position: relative;
+  overflow: clip;
+  width: 100%;
+  min-height: 4em;
+}
+
+#testText {
+  box-sizing: content-box;
+  position: absolute;
+  z-index: 2;
+  top: -2px;
+  left: -2px;
+  width: 100%;
+  background-color: white;
+  min-height: 2em;
+  border: 6px white solid;
+}
+
+#typed:focus {
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  display: hidden;
 }

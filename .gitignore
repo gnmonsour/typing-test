@@ -44,3 +44,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+
+# When not Testing
+/e2e
+*.spec.ts
+karma.conf.js

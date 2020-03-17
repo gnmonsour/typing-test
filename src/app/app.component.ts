@@ -6,21 +6,30 @@ import { lorem } from 'faker';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
-  title = 'Typing Challenge';
+export class AppComponent implements OnInit {
+  title = 'Typing Test';
   testText: string = '';
   answerText: string = '';
   isSame: boolean = false;
-
+  inputValue = '';
 
   ngOnInit(): void {
-    this.testText = lorem.sentence();
+    this.getNewTestText();
+  }
 
+  getNewTestText(): void {
+    this.testText = lorem.sentence();
+  }
+
+  resetTest(): void {
+    this.getNewTestText();
+    this.inputValue = '';
+    this.markAnswer('');
   }
 
   markAnswer(val: string) {
     this.answerText = val;
-    if(this.testText === val) {
+    if (this.testText === val) {
       this.isSame = true;
     } else {
       this.isSame = false;
